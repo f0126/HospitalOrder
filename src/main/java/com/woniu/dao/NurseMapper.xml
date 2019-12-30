@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.dao.NurseMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.domain.Nurse">
+    <id column="nurseId" jdbcType="INTEGER" property="nurseid" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="nurseName" jdbcType="VARCHAR" property="nursename" />
+    <result column="nurseLevel" jdbcType="VARCHAR" property="nurselevel" />
+    <result column="nursePhoto" jdbcType="VARCHAR" property="nursephoto" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    nurseId, uid, nurseName, nurseLevel, nursePhoto
+  </sql>
+  <select id="selectByExample" parameterType="com.woniu.domain.NurseExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from nurse
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from nurse
+    where nurseId = #{nurseid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from nurse
+    where nurseId = #{nurseid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.woniu.domain.NurseExample">
+    delete from nurse
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.woniu.domain.Nurse">
+    insert into nurse (nurseId, uid, nurseName, 
+      nurseLevel, nursePhoto)
+    values (#{nurseid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{nursename,jdbcType=VARCHAR}, 
+      #{nurselevel,jdbcType=VARCHAR}, #{nursephoto,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.woniu.domain.Nurse">
+    insert into nurse
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="nurseid != null">
+        nurseId,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="nursename != null">
+        nurseName,
+      </if>
+      <if test="nurselevel != null">
+        nurseLevel,
+      </if>
+      <if test="nursephoto != null">
+        nursePhoto,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="nurseid != null">
+        #{nurseid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="nursename != null">
+        #{nursename,jdbcType=VARCHAR},
+      </if>
+      <if test="nurselevel != null">
+        #{nurselevel,jdbcType=VARCHAR},
+      </if>
+      <if test="nursephoto != null">
+        #{nursephoto,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.woniu.domain.NurseExample" resultType="java.lang.Long">
+    select count(*) from nurse
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update nurse
+    <set>
+      <if test="record.nurseid != null">
+        nurseId = #{record.nurseid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.nursename != null">
+        nurseName = #{record.nursename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nurselevel != null">
+        nurseLevel = #{record.nurselevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nursephoto != null">
+        nursePhoto = #{record.nursephoto,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update nurse
+    set nurseId = #{record.nurseid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      nurseName = #{record.nursename,jdbcType=VARCHAR},
+      nurseLevel = #{record.nurselevel,jdbcType=VARCHAR},
+      nursePhoto = #{record.nursephoto,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.domain.Nurse">
+    update nurse
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="nursename != null">
+        nurseName = #{nursename,jdbcType=VARCHAR},
+      </if>
+      <if test="nurselevel != null">
+        nurseLevel = #{nurselevel,jdbcType=VARCHAR},
+      </if>
+      <if test="nursephoto != null">
+        nursePhoto = #{nursephoto,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where nurseId = #{nurseid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.domain.Nurse">
+    update nurse
+    set uid = #{uid,jdbcType=INTEGER},
+      nurseName = #{nursename,jdbcType=VARCHAR},
+      nurseLevel = #{nurselevel,jdbcType=VARCHAR},
+      nursePhoto = #{nursephoto,jdbcType=VARCHAR}
+    where nurseId = #{nurseid,jdbcType=INTEGER}
+  </update>
+</mapper>
