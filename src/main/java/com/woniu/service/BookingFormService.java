@@ -10,5 +10,4 @@ public interface BookingFormService {
     void delete(Integer bookingid);
     Bookingform find(Integer bookingid);
     List<Bookingform> find();
-    
 }
