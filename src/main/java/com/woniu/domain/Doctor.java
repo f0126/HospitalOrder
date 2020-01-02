@@ -18,8 +18,38 @@ public class Doctor implements Serializable {
     private String doctorstatus;
 
     private String doctorphoto;
+    
+    private Consultingroom consultingroom;
+    
+    private Department department;
+    
+    private Users users;
 
-    private static final long serialVersionUID = 1L;
+    public Consultingroom getConsultingroom() {
+		return consultingroom;
+	}
+
+	public void setConsultingroom(Consultingroom consultingroom) {
+		this.consultingroom = consultingroom;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public Users getUsers() {
+		return users;
+	}
+
+	public void setUsers(Users users) {
+		this.users = users;
+	}
+
+	private static final long serialVersionUID = 1L;
 
     public Integer getDoctorid() {
         return doctorid;

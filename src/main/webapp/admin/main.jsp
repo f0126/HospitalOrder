@@ -300,10 +300,10 @@
                                 <a href="#">医生管理<span class="fa arrow"></span></a>
 								<ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#" target="mainFrame">查看医生</a>
+                                        <a href="/doctor/selectAll" target="mainFrame">查看医生</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="mainFrame" target="mainFrame">增加医生</a>
+                                        <a href="/doctor/save" target="mainFrame" target="mainFrame">增加医生</a>
                                     </li>
                                 </ul>
                             </li>

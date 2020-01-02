@@ -22,14 +22,32 @@ public class DoctorController {
 	public String selectAll(Model model) {
 		List<Doctor> list = service.selectAll();
 		model.addAttribute("list",list);
-		return null;
+		return "admin/doctor/selectUI";
 	}
 	
 	@RequestMapping("selectById/{doctorid}")
 	public String selectById(@PathVariable Integer doctorid,Model model) {
 		Doctor d = service.selectById(doctorid);
 		model.addAttribute("d",d);
-		return null;
+		return "admin/doctor/update";
+	}
+	
+	@RequestMapping("save")
+	public String save(Doctor doctor) {
+		service.save(doctor);
+		return "redirect:/doctor/selectAll";
+	}
+	
+	@RequestMapping("delete/{doctorid}")
+	public String delete(@PathVariable Integer doctorid) {
+		service.delete(doctorid);
+		return "redirect:/doctor/selectAll";
+	}
+	
+	@RequestMapping("update")
+	public String update(Doctor doctor) {
+		service.update(doctor);
+		return "redirect:/doctor/selectAll";
 	}
 
 }

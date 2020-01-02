@@ -255,4 +255,35 @@
       doctorPhoto = #{doctorphoto,jdbcType=VARCHAR}
     where doctorId = #{doctorid,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectAll" resultMap="sa">
+  	select * from doctor d join consultingroom c on d.consroomId=c.consroomId join department de on d.departmentId=de.departmentId join users u on d.uid=u.uid
+  </select>
+  <resultMap type="com.woniu.domain.Doctor" id="sa">
+  	<id property="doctorid" column="doctorId"/>
+  	<result property="consroomid" column="consroomId"/>
+  	<result property="departmentid" column="departmentId"/>
+  	<result property="uid" column="uid"/>
+  	<result property="doctorname" column="doctorName"/>
+	<result property="doctorlevel" column="doctorLevel"/>
+	<result property="doctorstatus" column="doctorStatus"/>
+	<result property="doctorphoto" column="doctorPhoto"/>
+	<association property="consultingroom" javaType="com.woniu.domain.Consultingroom">
+		<id property="consroomid" column="consroomId"/>
+		<result property="doctorid" column="doctorId"/>
+		<result property="consroomname" column="consroomName"/>
+	</association>
+	<association property="department" javaType="com.woniu.domain.Department">
+		<id property="departmentid" column="departmentId"/>
+		<result property="departmentname" column="departmentName"/>
+	</association>
+	<association property="users" column="com.woniu.domain.Users">
+		<id property="uid" column="uid"/>
+		<result property="doctorid" column="doctorId"/>
+		<result property="nurseid" column="nurseId"/>
+		<result property="username" column="username"/>
+		<result property="password" column="password"/>
+		<result property="salt" column="salt"/>
+	</association>
+  </resultMap>
 </mapper>

@@ -20,13 +20,31 @@ public class DoctorServiceImpl implements DoctorService{
 	@Override
 	public List<Doctor> selectAll() {
 		// TODO Auto-generated method stub
-		return mapper.selectByExample(null);
+		return mapper.selectAll();
 	}
 
 	@Override
 	public Doctor selectById(Integer doctorid) {
 		// TODO Auto-generated method stub
 		return mapper.selectByPrimaryKey(doctorid);
+	}
+
+	@Override
+	public void save(Doctor doctor) {
+		// TODO Auto-generated method stub
+		mapper.insertSelective(doctor);
+	}
+
+	@Override
+	public void delete(Integer doctorid) {
+		// TODO Auto-generated method stub
+		mapper.deleteByPrimaryKey(doctorid);
+	}
+
+	@Override
+	public void update(Doctor doctor) {
+		// TODO Auto-generated method stub
+		mapper.updateByPrimaryKey(doctor);
 	}
 	
 }
