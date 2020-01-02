@@ -18,35 +18,15 @@ public class DoctorServiceImpl implements DoctorService{
 	private DoctorMapper mapper;
 
 	@Override
-	public void save(Doctor doctor) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(Doctor doctor) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Integer doctorid) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<Doctor> selectAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByExample(null);
 	}
 
 	@Override
 	public Doctor selectById(Integer doctorid) {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByPrimaryKey(doctorid);
 	}
-	
-	
 	
 }
