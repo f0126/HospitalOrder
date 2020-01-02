@@ -246,23 +246,90 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="http://www.baidu.com" target="mainFrame"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" href="#" target="mainFrame"><i class="fa fa-dashboard"></i> 预约管理</a>
                     </li>
                     <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop" target="mainFrame"></i> UI Elements</a>
+                        <a href="#l"><i class="fa fa-desktop" target="mainFrame"></i> 项目管理</a>
                     </li>
 					<li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o" target="mainFrame"></i> Charts</a>
+                        <a href="#"><i class="fa fa-bar-chart-o" target="mainFrame"></i> 号源管理</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode" target="mainFrame"></i> Tabs & Panels</a>
+                        <a href="#"><i class="fa fa-qrcode" target="mainFrame"></i> 排班管理</a>
                     </li>
                     
                     <li>
-                        <a href="table.html"><i class="fa fa-table" target="mainFrame"></i> Responsive Tables</a>
+                        <a href="#"><i class="fa fa-sitemap"></i> 患者管理<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">病历管理<span class="fa arrow"></span></a>
+								<ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#" target="mainFrame">查看病历</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="mainFrame" target="mainFrame">增加病历</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">预约单管理<span class="fa arrow"></span></a>
+								<ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#" target="mainFrame">查看预约单</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">缴费单管理<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="/permissions/findAll" target="mainFrame">查看缴费单</a>
+                                    </li>
+                                    <li>
+                                        <a href="/permissions/saveUI" target="mainFrame">增加缴费单</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="form.html"><i class="fa fa-edit" target="mainFrame"></i> Forms </a>
+                         <a href="#"><i class="fa fa-sitemap"></i> 医护人员管理<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">医生管理<span class="fa arrow"></span></a>
+								<ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#" target="mainFrame">查看医生</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="mainFrame" target="mainFrame">增加医生</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">护士管理<span class="fa arrow"></span></a>
+								<ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#" target="mainFrame">查看护士</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="mainFrame">增加护士</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">权限管理<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="/permissions/findAll" target="mainFrame">查看权限</a>
+                                    </li>
+                                    <li>
+                                        <a href="/permissions/saveUI" target="mainFrame">增加权限</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
 
 
