@@ -43,5 +43,4 @@ public class BookingformImpl implements BookingFormService{
 		// TODO Auto-generated method stub
 		return mapper.selectByExample(null);
 	}
-
 }
