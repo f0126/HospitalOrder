@@ -256,31 +256,31 @@
     where doctorId = #{doctorid,jdbcType=INTEGER}
   </update>
   
-  <select id="selectAll" resultMap="sa">
+  <select id="selectAnyMore" resultMap="sa">
   	select * from doctor d join consultingroom c on d.consroomId=c.consroomId join department de on d.departmentId=de.departmentId join users u on d.uid=u.uid
   </select>
   <resultMap type="com.woniu.domain.Doctor" id="sa">
-  	<id property="doctorid" column="doctorId"/>
-  	<result property="consroomid" column="consroomId"/>
-  	<result property="departmentid" column="departmentId"/>
+  	<id property="doctorid" column="doctorid"/>
+  	<result property="consroomid" column="consroomid"/>
+  	<result property="departmentid" column="departmentid"/>
   	<result property="uid" column="uid"/>
-  	<result property="doctorname" column="doctorName"/>
-	<result property="doctorlevel" column="doctorLevel"/>
-	<result property="doctorstatus" column="doctorStatus"/>
-	<result property="doctorphoto" column="doctorPhoto"/>
+  	<result property="doctorname" column="doctorname"/>
+	<result property="doctorlevel" column="doctorlevel"/>
+	<result property="doctorstatus" column="doctorstatus"/>
+	<result property="doctorphoto" column="doctorphoto"/>
 	<association property="consultingroom" javaType="com.woniu.domain.Consultingroom">
-		<id property="consroomid" column="consroomId"/>
-		<result property="doctorid" column="doctorId"/>
-		<result property="consroomname" column="consroomName"/>
+		<id property="consroomid" column="consroomid"/>
+		<result property="doctorid" column="doctorid"/>
+		<result property="consroomname" column="consroomname"/>
 	</association>
 	<association property="department" javaType="com.woniu.domain.Department">
-		<id property="departmentid" column="departmentId"/>
-		<result property="departmentname" column="departmentName"/>
+		<id property="departmentid" column="departmentid"/>
+		<result property="departmentname" column="departmentname"/>
 	</association>
-	<association property="users" column="com.woniu.domain.Users">
+	<association property="users" javaType="com.woniu.domain.Users">
 		<id property="uid" column="uid"/>
-		<result property="doctorid" column="doctorId"/>
-		<result property="nurseid" column="nurseId"/>
+		<result property="doctorid" column="doctorid"/>
+		<result property="nurseid" column="nurseid"/>
 		<result property="username" column="username"/>
 		<result property="password" column="password"/>
 		<result property="salt" column="salt"/>

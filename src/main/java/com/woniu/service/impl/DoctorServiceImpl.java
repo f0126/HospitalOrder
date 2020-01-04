@@ -20,7 +20,7 @@ public class DoctorServiceImpl implements DoctorService{
 	@Override
 	public List<Doctor> selectAll() {
 		// TODO Auto-generated method stub
-		return mapper.selectAll();
+		return mapper.selectAnyMore();
 	}
 
 	@Override

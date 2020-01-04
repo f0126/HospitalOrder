@@ -3,6 +3,7 @@ package com.woniu.dao;
 import com.woniu.domain.Doctor;
 import com.woniu.domain.DoctorExample;
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface DoctorMapper {
@@ -28,7 +29,6 @@ public interface DoctorMapper {
 
     int updateByPrimaryKey(Doctor record);
     
-    List<Doctor> selectAll();
+    List<Doctor> selectAnyMore();
     
-    Doctor selectById(Integer doctorid);
 }

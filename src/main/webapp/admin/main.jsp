@@ -303,7 +303,7 @@
                                         <a href="/doctor/selectAll" target="mainFrame">查看医生</a>
                                     </li>
                                     <li>
-                                        <a href="/doctor/save" target="mainFrame" target="mainFrame">增加医生</a>
+                                        <a href="/doctor/saveUI" target="mainFrame">增加医生</a>
                                     </li>
                                 </ul>
                             </li>

@@ -10,7 +10,8 @@
 <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<table class="table table-bordered">
+<h1 class="text-center">医生概览</h1>
+<table class="table table-striped table-bordered table-hover table-condensed">
 	<tr>
 		<td>医生编号</td>
 		<td>诊室</td>
@@ -26,13 +27,18 @@
 	 	<d:forEach items="${list}" var="d">
 			<tr>
 				<td>${d.doctorid}</td>
-				<td>${d.Consultingroom.consroomname}</td>
-				<td>${d.Department.departmentname}</td>
-				<td>${d.Users.username}</td>
+				<td>${d.consultingroom.consroomname}</td>
+				<td>${d.department.departmentname}</td>
+				<td>${d.users.username}</td>
 				<td>${d.doctorname}</td>
 				<td>${d.doctorlevel}</td>
 				<td>${d.doctorstatus}</td>
 				<td>${d.doctorphoto}</td>
+				<td>
+					<a href="/doctor/delete/${d.doctorid }">删除</a>
+					|
+					<a href="/doctor/selectById/${d.doctorid }">修改</a>
+				</td>
 			</tr>
 		</d:forEach>
 	</tr>

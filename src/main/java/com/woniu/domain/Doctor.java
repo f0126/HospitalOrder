@@ -115,22 +115,13 @@ public class Doctor implements Serializable {
         this.doctorphoto = doctorphoto == null ? null : doctorphoto.trim();
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", doctorid=").append(doctorid);
-        sb.append(", consroomid=").append(consroomid);
-        sb.append(", departmentid=").append(departmentid);
-        sb.append(", uid=").append(uid);
-        sb.append(", doctorname=").append(doctorname);
-        sb.append(", doctorlevel=").append(doctorlevel);
-        sb.append(", doctorstatus=").append(doctorstatus);
-        sb.append(", doctorphoto=").append(doctorphoto);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
+	@Override
+	public String toString() {
+		return "Doctor [doctorid=" + doctorid + ", consroomid=" + consroomid + ", departmentid=" + departmentid
+				+ ", uid=" + uid + ", doctorname=" + doctorname + ", doctorlevel=" + doctorlevel + ", doctorstatus="
+				+ doctorstatus + ", doctorphoto=" + doctorphoto + ", consultingroom=" + consultingroom + ", department="
+				+ department + ", users=" + users + "]";
+	}
+
+    
 }
