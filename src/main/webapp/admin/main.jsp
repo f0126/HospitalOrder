@@ -247,6 +247,11 @@
 
                     <li>
                         <a class="active-menu" href="#" target="mainFrame"><i class="fa fa-dashboard"></i> 预约管理</a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                               <a href="/bookingform/find" target="mainFrame">查看预约单</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#l"><i class="fa fa-desktop" target="mainFrame"></i> 项目管理</a>
