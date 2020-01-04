@@ -261,6 +261,9 @@
                     <li>
                         <a href="#"><i class="fa fa-sitemap"></i> 患者管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
+                        	 <li>
+                                <a href="/patients/findAll" target="mainFrame">查看患者<span class="fa arrow"></span></a>
+                            </li>
                             <li>
                                 <a href="#">病历管理<span class="fa arrow"></span></a>
 								<ul class="nav nav-third-level">
@@ -343,7 +346,7 @@
                                         <a href="/users/findAll" target="mainFrame">查看用户</a>
                                     </li>
                                     <li>
-                                        <a href="/users/saveUI" target="mainFrame" target="mainFrame">增加用户</a>
+                                        <a href="/users/saveUI" target="mainFrame">增加用户</a>
                                     </li>
                                 </ul>
                             </li>
