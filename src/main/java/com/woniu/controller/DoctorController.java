@@ -44,6 +44,12 @@ public class DoctorController {
 	public String selectById(@PathVariable Integer doctorid,Model model) {
 		Doctor d = service.selectById(doctorid);
 		model.addAttribute("d",d);
+		List<Consultingroom> room = roomService.findAll();
+		List<Department> department = departmentService.findAll();
+		List<Users> user = userService.findAll();
+		model.addAttribute("room",room);
+		model.addAttribute("department",department);
+		model.addAttribute("user",user);
 		return "/admin/doctor/update";
 	}
 	
