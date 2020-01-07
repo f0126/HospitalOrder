@@ -19,10 +19,21 @@ public class Sourcenumber implements Serializable {
     private Integer surplusnum;
 
     private Double sourceprice;
-
+    
+    private Project project;
+    
     private static final long serialVersionUID = 1L;
+    
+    
+    public Project getProject() {
+		return project;
+	}
 
-    public Integer getSourceid() {
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+	public Integer getSourceid() {
         return sourceid;
     }
 

@@ -254,10 +254,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#l"><i class="fa fa-desktop" target="mainFrame"></i> 项目管理</a>
+                        <a href="/projects/findAll" target="mainFrame"><i class="fa fa-desktop"></i> 项目管理</a>
                     </li>
 					<li>
-                        <a href="#"><i class="fa fa-bar-chart-o" target="mainFrame"></i> 号源管理</a>
+                        <a href="/sourcenumbers/findAll" target="mainFrame"><i class="fa fa-bar-chart-o"></i> 号源管理</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-qrcode" target="mainFrame"></i> 排班管理</a>

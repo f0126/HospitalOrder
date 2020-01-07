@@ -27,4 +27,8 @@ public interface SourcenumberMapper {
     int updateByPrimaryKeySelective(Sourcenumber record);
 
     int updateByPrimaryKey(Sourcenumber record);
+    
+    Sourcenumber selectConnectProject(Integer id);
+    
+    List<Sourcenumber> selectAll();
 }
