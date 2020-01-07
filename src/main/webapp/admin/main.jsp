@@ -326,17 +326,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#">权限管理<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="/permissions/findAll" target="mainFrame">查看权限</a>
-                                    </li>
-                                    <li>
-                                        <a href="/permissions/saveUI" target="mainFrame">增加权限</a>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                     </li>
 
