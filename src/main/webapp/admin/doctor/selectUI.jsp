@@ -33,7 +33,9 @@
 				<td>${d.doctorname}</td>
 				<td>${d.doctorlevel}</td>
 				<td>${d.doctorstatus}</td>
-				<td>${d.doctorphoto}</td>
+				<td>
+					<img src="/images/${d.doctorphoto}" width="80px" height="100px">
+				</td>
 				<td>
 					<a href="/doctor/delete/${d.doctorid }">删除</a>
 					|

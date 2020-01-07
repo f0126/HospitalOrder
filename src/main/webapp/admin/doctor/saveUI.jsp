@@ -10,7 +10,7 @@
 <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<form action="/doctor/save" method="post" role="form">
+<form action="/doctor/save" method="post" role="form" enctype="multipart/form-data">
   <div class="form-group">
     <label for="doctorname">医生姓名</label>
     <input type="text" class="form-control" id="doctorname" placeholder="医生姓名" name="doctorname">
@@ -25,7 +25,7 @@
   </div>
   <div class="form-group">
     <label for="doctorphoto">医生照片</label>
-    <input type="file" id="doctorphoto" name="doctorphoto">
+    <input type="file" id="doctorphoto" name="doctorphoto2">
     <p class="help-block">请上传个人一寸照片</p>
   </div>
   <div class="form-group">
