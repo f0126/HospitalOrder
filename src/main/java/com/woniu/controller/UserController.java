@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.woniu.annotation.Function;
 import com.woniu.domain.Roles;
 import com.woniu.domain.Users;
 import com.woniu.service.RolesService;
@@ -28,6 +29,7 @@ public class UserController {
 	@Autowired
 	RolesService rservice;
 	@RequestMapping("login")
+	@Function("用户登录")
 	public String login(String username,String password,Model model) {
 		Subject subject = SecurityUtils.getSubject();
 		UsernamePasswordToken token=new UsernamePasswordToken(username,password);
@@ -45,6 +47,7 @@ public class UserController {
 	
 	@RequiresPermissions("user:find")
 	@RequestMapping("findAll")
+	@Function("查看所有用户")
 	public String findAll(Model model) {
 		List<Users> userList=service.findAll();
 		model.addAttribute("userList", userList);
