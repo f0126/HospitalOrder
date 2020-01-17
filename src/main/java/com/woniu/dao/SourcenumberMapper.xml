@@ -256,4 +256,28 @@
       sourcePrice = #{sourceprice,jdbcType=DOUBLE}
     where sourceId = #{sourceid,jdbcType=INTEGER}
   </update>
+  
+  
+  
+  <select id="selectConnectProject" parameterType="int" resultMap="rm">
+  	select * from sourcenumber s join project p on s.projectId=p.projectId where s.sourceId=#{id}
+  </select>
+  <select id="selectAll" resultMap="rm">
+  	select * from sourcenumber s join project p on s.projectId=p.projectId
+  </select>
+  <resultMap type="com.woniu.domain.Sourcenumber" id="rm">
+  	<id property="sourceid" column="sourceId"/>
+  	<result property="sourcecode" column="sourceCode"/>
+  	<result property="sourcetime" column="sourceTime"/>
+  	<result property="sourceampm" column="sourceAmPm"/>
+  	<result property="sourcenumup" column="sourceNumUp"/>
+  	<result property="surplusnum" column="surplusNum"/>
+  	<result property="sourceprice" column="sourcePrice"/>
+  	<association property="project" javaType="com.woniu.domain.Project">
+  		<id property="projectid" column="projectId"/>
+  		<result property="sourceid" column="sourceId"/>
+  		<result property="projectname" column="projectName"/>
+  		<result property="projectidprice" column="projectIdPrice"/>
+  	</association>
+  </resultMap>
 </mapper>
