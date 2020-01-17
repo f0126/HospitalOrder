@@ -15,22 +15,24 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /*
- * find的切面
+ * 这个切面已经被弃用，无法处理日期类
+ * 
+ * 
  * */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class RedisAspect {
-	@Autowired
+	//@Autowired
 	private JedisPool pool;
 	
 	
 	
-	@Around("execution(* com.woniu.service.*.*find*(..))")
+	//@Around("execution(* com.woniu.service.*.*find*(..))")
 	public Object f1(ProceedingJoinPoint pjp) {
 		ObjectMapper om= new ObjectMapper();
 		Object obj = null;
 		Jedis jedis = null;
-		//获取目标对象
+		//获取目标对象 target是serviceImpl这个类
 		Object target = pjp.getTarget();
 		StringBuffer key = new StringBuffer("");
 		key.append(target.getClass().getSimpleName());
@@ -49,7 +51,14 @@ public class RedisAspect {
 			}else {
 				//放行
 				obj = pjp.proceed();
+			
+				System.out.println(obj);
+				
+				//這一步序列化有問題，因為對象有可能有日期字段，
+				
+				//這裏需要重新序列化
 				String json = om.writeValueAsString(obj);
+				
 				jedis.set(k, json);
 				//设置键值存活时间为1小时
 				jedis.expire(k,3600);

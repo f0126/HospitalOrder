@@ -25,10 +25,6 @@ public class NurseController {
 	@RequestMapping("findAll")
 	public String findAll(Model model) throws JsonProcessingException {
 		List<Nurse> nurseList = service.findAll();
-		ObjectMapper om=new ObjectMapper();
-		//将得到的集合序列化并变为Json格式
-		String json = om.writeValueAsString(nurseList);
-		//Json格式的数据用Model的addAttribute方法传送给前端
 		model.addAttribute("NurseList", nurseList);
 		return "admin/nurse/findUI";
 	}
@@ -60,21 +56,17 @@ public class NurseController {
 	}
 	@RequestMapping("saveUI")
 	public String saveUI(Model model) {
-		ObjectMapper om = new ObjectMapper();
-		List<Nurse> nurseList = service.findAll(); 
 		return "admin/nurse/saveUI";
 	}
-	@RequestMapping("delete/{id}")
-	public String delete(@PathVariable Integer nid) {
-		service.delete(nid);
+	@RequestMapping("delete/{nurseid}")
+	public String delete(@PathVariable Integer nurseid) {
+		service.delete(nurseid);
 		return "redirect:/nurses/findAll";
 	}
-	@RequestMapping("findOne/{id}")
-	public String findOne(@PathVariable Integer nid,Model model) {
-		
-		Nurse n = service.findOne(nid);
+	@RequestMapping("findOne/{nurseid}")
+	public String findOne(@PathVariable Integer nurseid,Model model) {
+		Nurse n = service.findOne(nurseid);
 		model.addAttribute("Nurse",n);
-		
 		return "admin/nurse/updateUI";
 	}
 	@RequestMapping("update")
@@ -82,5 +74,6 @@ public class NurseController {
 		service.update(n);
 		return "redirect:/nurses/findAll";
 	}
+	
 	
 }

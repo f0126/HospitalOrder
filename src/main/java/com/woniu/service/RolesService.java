@@ -18,4 +18,6 @@ public interface RolesService {
   	void cancelPermissionsByRid(Integer rid);
   //批量授权
   	void insertBatch(Integer rid,Integer[] pids);
+  	
+  	
 }

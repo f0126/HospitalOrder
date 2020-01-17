@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<form action="/nurses/save" method="post" enctype="multipart/form-data" role="form">
 		<!-- 這裏做成下拉菜單 -->
 		角色：<input type="text" name="uid" /><br /> 

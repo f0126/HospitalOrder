@@ -319,10 +319,10 @@
                                 <a href="#">护士管理<span class="fa arrow"></span></a>
 								<ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#" target="mainFrame">查看护士</a>
+                                        <a href="/nurses/findAll" target="mainFrame">查看护士</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="mainFrame">增加护士</a>
+                                        <a href="/nurses/saveUI" target="mainFrame">增加护士</a>
                                     </li>
                                 </ul>
                             </li>
